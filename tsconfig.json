@@ -3,5 +3,7 @@
     "module": "CommonJS",
     "outDir": "./js",
     "target": "ES2017",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
   }
 }

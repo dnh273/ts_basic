@@ -64,3 +64,48 @@ let sinhVien: SinhVien = {
   tenSinhVien: "AB",
   diaChi: "diaChi1",
 };
+
+// type Array
+let arrNumber: number[] = [1, 2, 3, 4, 5, 6];
+let arrString: string[] = ["1", "2", "3", "4"];
+let arrProduct: Product[] = [
+  { id: "2", name: "product2", price: 2000 },
+  { id: "2", name: "product2", price: 2000 },
+  { id: "2", name: "product2", price: 2000 },
+];
+
+// function
+function tinhTong(a: number, b: number): number {
+  return a + b;
+}
+
+let showMessage = (mess: string): string => {
+  return "Hello " + mess;
+};
+
+let sayHello = (): void => {
+  console.log("say hi");
+};
+
+// Callback
+
+function main(callback: (title: string) => void) {
+  callback("Hello its me");
+}
+
+// function renderH1(title: string): void {
+//   document.querySelector(
+//     "#content"
+//   ).innerHTML = `<h1 class="bg-dark text-white p-5 display-4">
+//   ${title}
+//   </h1>`;
+// }
+
+function renderSection(title: string): void {
+  let contetnt = <HTMLElement>document.querySelector("#content");
+  contetnt.innerHTML = `
+    ${title}
+  `;
+}
+
+main(renderSection);
