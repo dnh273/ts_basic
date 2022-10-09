@@ -168,3 +168,25 @@ interface SanPham1 {
 let sp: SanPham = { maSP: 1, tenSanPham: "san pham 1", gia: 1000 };
 
 console.log(sp.moTa?.rom);
+
+// type: any, unknow
+// any: là kiểu dữ liệu nhận tất cả các giá trị
+
+let resultApi: any = {
+  maSP: 1,
+  tenSanPham: "sanpham123",
+  gia: 1000,
+  moTa: {
+    ram: 10,
+    rom: 32,
+  },
+};
+
+let number: any = 1;
+number += 1;
+// unknow: nhận tất cả các giá trị giống any tuy nhiên operation thì cần phải kiểm tra trước
+let number1: unknown = 1;
+// number1 += 1;
+if (typeof number1 === "number") {
+  number1 += 1;
+}
