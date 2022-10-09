@@ -140,4 +140,31 @@ let [state, setState]: [number, (newState: number) => number] = [
 
 type IdUserName = string | number;
 
-let userName:IdUserName = 1;
+let userName: IdUserName = 1;
+
+// optional properties: Dùng cho mô tả thuộc tính có thể có hoặc không
+// optional changing : Dùng cho thuộc tính khi sử dụng nếu không có sẽ không báo lỗi
+
+type SanPham = {
+  maSP: string | number;
+  tenSanPham: string;
+  gia: number;
+  moTa?: {
+    ran: number;
+    rom: number;
+  };
+};
+
+interface SanPham1 {
+  maSP: string | number;
+  tenSanPham: string;
+  gia: number;
+  moTa?: {
+    ran: number;
+    rom: number;
+  };
+}
+
+let sp: SanPham = { maSP: 1, tenSanPham: "san pham 1", gia: 1000 };
+
+console.log(sp.moTa?.rom);
