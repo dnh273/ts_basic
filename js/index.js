@@ -60,3 +60,20 @@ function renderSection(title) {
   `;
 }
 main(renderSection);
+// tuple mảng hỗn hợp [number,string, ()=>void]
+let sv = {
+    id: 1,
+    name: "Nguyen Van A",
+    showInfo: () => {
+        console.log("showInfo");
+    },
+};
+let [id, name1, showInfo] = [
+    1,
+    "Nguyen Van B",
+    () => {
+        console.log("showInfo");
+    },
+];
+console.log(id, name1);
+showInfo;

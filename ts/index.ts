@@ -109,3 +109,35 @@ function renderSection(title: string): void {
 }
 
 main(renderSection);
+
+// tuple mảng hỗn hợp [number,string, ()=>void]
+
+let sv = {
+  id: 1,
+  name: "Nguyen Van A",
+  showInfo: (): void => {
+    console.log("showInfo");
+  },
+};
+
+let result5: [number, string, () => void] = [
+  1,
+  "Nguyen Van B",
+  () => {
+    console.log("showInfo");
+  },
+];
+
+let [state, setState]: [number, (newState: number) => number] = [
+  1,
+  (newState: number): number => {
+    state = newState;
+    return state;
+  },
+];
+
+// type, union type: cho phép giá trị nhận được nhiều hơn 1 type
+
+type IdUserName = string | number;
+
+let userName:IdUserName = 1;
